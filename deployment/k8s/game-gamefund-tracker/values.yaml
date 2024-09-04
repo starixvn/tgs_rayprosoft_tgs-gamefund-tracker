@@ -117,9 +117,3 @@ affinity:
           values:
           - game-gamefund-tracker
       topologyKey: kubernetes.io/hostname
-
-restart:
-  enabled: false
-  serviceAccount: game-gamefund-tracker-restarter
-  annotations: {}
-  schedule: 0 0 * * * 
