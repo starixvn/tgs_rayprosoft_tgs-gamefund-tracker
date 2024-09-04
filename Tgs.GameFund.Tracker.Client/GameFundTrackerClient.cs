@@ -11,8 +11,8 @@ internal class GameFundTrackerClient(HttpClient httpClient) : IGameFundTrackerCl
                 requestUri: "/tracker/trace",
                 value: new
                 {
-                    gameProviderId = gameProviderId.ToString(),
-                    walletId = walletId.ToString(),
+                    gameProviderId,
+                    walletId,
                     playerCode,
                 },
                 cancellationToken: cancellationToken)
