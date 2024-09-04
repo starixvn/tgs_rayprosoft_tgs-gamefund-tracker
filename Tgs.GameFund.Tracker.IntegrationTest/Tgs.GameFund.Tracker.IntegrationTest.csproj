@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tgs.GameFund.Tracker\Tgs.GameFund.Tracker.csproj" />
+    <ProjectReference Include="..\Tgs.GameFund.Tracker.Client\Tgs.GameFund.Tracker.Client.csproj" />
   </ItemGroup>
 
 </Project>

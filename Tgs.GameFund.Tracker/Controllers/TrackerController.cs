@@ -5,7 +5,7 @@ using Valhalla.MessageQueue;
 
 namespace Tgs.GameFund.Tracker.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class TrackerController : ControllerBase
 {
