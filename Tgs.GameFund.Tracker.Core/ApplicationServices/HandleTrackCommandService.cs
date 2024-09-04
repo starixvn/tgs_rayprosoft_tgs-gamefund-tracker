@@ -18,7 +18,7 @@ internal class HandleTrackCommandService(
 		}
 		catch (Exception exception)
 		{
-			logger.LogWarning(exception, "{logWarning}",
+			logger.LogError(exception, "{logError}",
 				new
 				{
 					LogOn = DateTime.Now.ToString("u"),
