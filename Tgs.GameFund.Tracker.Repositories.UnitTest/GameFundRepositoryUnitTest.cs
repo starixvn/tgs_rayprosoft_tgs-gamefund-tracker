@@ -21,16 +21,12 @@ public class GameFundRepositoryUnitTest
 		var fakeLogger = NullLogger<GameFundRepository>.Instance;
 		var fakeContext = new TgsDbContext(options);
 		var sut = new GameFundRepository(fakeLogger, fakeContext);
-		var message = new GameFundTraceMessage
-		{
-			GameProviderId = gameProviderId,
-			WalletId = walletId,
-			PlayerCode = playerCode
-		};
 
 		// Act
 		await sut.SaveAsync(
-			message: message,
+			gameProviderId: gameProviderId,
+			walletId: walletId,
+			playerCode: playerCode,
 			cancellationToken: default);
 
 		// Assert
@@ -72,16 +68,12 @@ public class GameFundRepositoryUnitTest
 		var fakeLogger = NullLogger<GameFundRepository>.Instance;
 		var fakeContext = new TgsDbContext(options);
 		var sut = new GameFundRepository(fakeLogger, fakeContext);
-		var message = new GameFundTraceMessage
-		{
-			GameProviderId = gameProviderId,
-			WalletId = walletId,
-			PlayerCode = playerCode
-		};
 
 		// Act
 		await sut.SaveAsync(
-			message: message,
+			gameProviderId: gameProviderId,
+			walletId: walletId,
+			playerCode: playerCode,
 			cancellationToken: default);
 
 		// Assert

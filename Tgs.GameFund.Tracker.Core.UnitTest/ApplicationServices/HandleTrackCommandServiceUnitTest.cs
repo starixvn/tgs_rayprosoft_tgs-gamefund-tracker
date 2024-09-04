@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using NSubstitute;
 using Tgs.GameFund.Tracker.Core.ApplicationServices;
 
-namespace Tgs.GameFund.Tracker.Core.UnitTest;
+namespace Tgs.GameFund.Tracker.Core.UnitTest.ApplicationServices;
 
 public class HandleTrackCommandServiceUnitTest
 {
@@ -17,12 +17,10 @@ public class HandleTrackCommandServiceUnitTest
 		var fakeLogger = NullLogger<HandleTrackCommandService>.Instance;
 		var fakeRepository = Substitute.For<IGameFundRepository>();
 		var sut = new HandleTrackCommandService(fakeLogger, fakeRepository);
-		var command = new HandleTrackCommand(new GameFundTraceMessage
-		{
-			GameProviderId = gameProviderId,
-			WalletId = walletId,
-			PlayerCode = playerCode
-		});
+		var command = new HandleTrackCommand(
+			GameProviderId: gameProviderId,
+			WalletId: walletId,
+			PlayerCode: playerCode);
 
 		// Act
 		await sut.ExecuteAsync(
@@ -33,10 +31,9 @@ public class HandleTrackCommandServiceUnitTest
 		_ = fakeRepository
 			.Received(1)
 			.SaveAsync(
-				message: Arg.Is<GameFundTraceMessage>(x =>
-					x.GameProviderId == gameProviderId &&
-					x.WalletId == walletId &&
-					x.PlayerCode == "4ucmqplxb029"),
+				gameProviderId: Arg.Is(gameProviderId),
+				walletId: Arg.Is(walletId),
+				playerCode: Arg.Is(playerCode),
 				cancellationToken: Arg.Any<CancellationToken>())
 			.ConfigureAwait(true);
 	}

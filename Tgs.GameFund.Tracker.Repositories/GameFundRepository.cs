@@ -10,7 +10,7 @@ internal class GameFundRepository(
 	TgsDbContext tgsDbContext
 	) : IGameFundRepository
 {
-	public async ValueTask SaveAsync(GameFundTraceMessage message, CancellationToken cancellationToken = default)
+	public async ValueTask SaveAsync(Guid gameProviderId, Guid walletId, string playerCode, CancellationToken cancellationToken = default)
 	{
 		logger.LogDebug(nameof(SaveAsync));
 
@@ -19,9 +19,9 @@ internal class GameFundRepository(
 		var entity = await tgsDbContext.GameFundTransferTraces
 			.FirstOrDefaultAsync(
 				e =>
-					e.GameProviderId == message.GameProviderId &&
-					e.WalletId == message.WalletId &&
-					e.PlayerCode == message.PlayerCode,
+					e.GameProviderId == gameProviderId &&
+					e.WalletId == walletId &&
+					e.PlayerCode == playerCode,
 				cancellationToken)
 			.ConfigureAwait(false);
 
@@ -29,9 +29,9 @@ internal class GameFundRepository(
 		{
 			entity = new()
 			{
-				GameProviderId = message.GameProviderId,
-				WalletId = message.WalletId,
-				PlayerCode = message.PlayerCode,
+				GameProviderId = gameProviderId,
+				WalletId = walletId,
+				PlayerCode = playerCode,
 				CreatedOn = systemTime,
 				UpdatedOn = systemTime
 			};

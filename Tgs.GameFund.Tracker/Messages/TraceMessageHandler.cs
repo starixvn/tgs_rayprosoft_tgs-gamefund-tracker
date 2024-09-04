@@ -30,7 +30,10 @@ public class TraceMessageHandler(
 			}));
 
 		return service.ExecuteAsync(
-			command: new HandleTrackCommand(message),
+			command: new HandleTrackCommand(
+				GameProviderId: message.GameProviderId,
+				WalletId: message.WalletId,
+				PlayerCode: message.PlayerCode),
 			cancellationToken: cancellationToken);
 	}
 }

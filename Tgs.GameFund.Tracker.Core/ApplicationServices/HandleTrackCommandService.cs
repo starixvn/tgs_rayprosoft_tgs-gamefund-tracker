@@ -11,10 +11,15 @@ internal class HandleTrackCommandService(
 	{
 		logger.LogInformation(nameof(ExecuteAsync));
 
-		var message = command.Message;
 		try
 		{
-			await repository.SaveAsync(message, cancellationToken).ConfigureAwait(false);
+			await repository
+				.SaveAsync(
+					gameProviderId: command.GameProviderId,
+					walletId: command.WalletId,
+					playerCode: command.PlayerCode,
+					cancellationToken: cancellationToken)
+				.ConfigureAwait(false);
 		}
 		catch (Exception exception)
 		{
@@ -24,9 +29,9 @@ internal class HandleTrackCommandService(
 					LogOn = DateTime.Now.ToString("u"),
 					Data = new
 					{
-						message.GameProviderId,
-						message.WalletId,
-						message.PlayerCode
+						command.GameProviderId,
+						command.WalletId,
+						command.PlayerCode
 					},
 					exception.Message
 				});
