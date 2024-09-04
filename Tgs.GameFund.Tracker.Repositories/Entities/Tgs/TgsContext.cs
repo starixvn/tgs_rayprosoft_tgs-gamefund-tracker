@@ -23,7 +23,6 @@ public partial class TgsContext : DbContext
             .HasPostgresExtension("pg_trgm");
 
         modelBuilder.ApplyConfiguration(new Configurations.GameFundTransferTraceConfiguration());
-
         OnModelCreatingPartial(modelBuilder);
     }
 
