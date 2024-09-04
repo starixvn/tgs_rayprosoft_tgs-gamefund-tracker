@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class PlayerAllAgentRebateRecord
+{
+    public Guid Id { get; set; }
+
+    public Guid BrandId { get; set; }
+
+    public string PlayerCode { get; set; } = null!;
+
+    public short AllAgentGameType { get; set; }
+
+    public short AllAgentRebateType { get; set; }
+
+    public int Rank { get; set; }
+
+    public int ActiveNumber { get; set; }
+
+    public decimal ConditionAmount { get; set; }
+
+    public int ActualPlayerNumber { get; set; }
+
+    public decimal ActualConditionAmount { get; set; }
+
+    public decimal RebateAmount { get; set; }
+
+    public decimal RebatePercentage { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public DateTime SettleDate { get; set; }
+
+    public DateTime To { get; set; }
+
+    public DateTime From { get; set; }
+}

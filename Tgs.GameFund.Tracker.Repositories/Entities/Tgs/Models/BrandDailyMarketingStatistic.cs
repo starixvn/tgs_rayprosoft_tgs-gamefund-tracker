@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class BrandDailyMarketingStatistic
+{
+    public Guid BrandId { get; set; }
+
+    public DateOnly ReportDate { get; set; }
+
+    /// <summary>
+    /// 無直屬代理的玩家遊戲人數
+    /// </summary>
+    public int? DirectlyPlayerGamingCount { get; set; }
+
+    /// <summary>
+    /// 無直屬代理的玩家註冊人數
+    /// </summary>
+    public int? DirectlyPlayerRegisterCount { get; set; }
+
+    /// <summary>
+    /// 玩家總遊戲人數
+    /// </summary>
+    public int? TotalPlayerGamingCount { get; set; }
+
+    /// <summary>
+    /// 玩家總註冊人數
+    /// </summary>
+    public int? TotalPlayerRegisterCount { get; set; }
+}

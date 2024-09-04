@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class Agent
+{
+    public Guid Id { get; set; }
+
+    public string Username { get; set; } = null!;
+
+    public string? RealName { get; set; }
+
+    public byte[] Password { get; set; } = null!;
+
+    public byte[] Salt { get; set; } = null!;
+
+    public byte[] WithdrawPassword { get; set; } = null!;
+
+    public byte[] WithdrawSalt { get; set; } = null!;
+
+    public short Status { get; set; }
+
+    public int AgentStatus { get; set; }
+
+    public int LevelType { get; set; }
+
+    public short Type { get; set; }
+
+    public string InvitationCode { get; set; } = null!;
+
+    public Guid BrandId { get; set; }
+
+    public Guid? ParentAgentId { get; set; }
+
+    public DateTime RegisteredOn { get; set; }
+
+    public Guid DefaultWalletId { get; set; }
+
+    public decimal CommissionPercentage { get; set; }
+
+    public decimal DividendPercentage { get; set; }
+
+    public decimal LiveDealerRebatePercentage { get; set; }
+
+    public decimal SlotRebatePercentage { get; set; }
+
+    public decimal LotteryRebatePercentage { get; set; }
+
+    public decimal CardGameRebatePercentage { get; set; }
+
+    public decimal SportsRebatePercentage { get; set; }
+
+    public decimal VirtualSportsRebatePercentage { get; set; }
+
+    public string? Remarks { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? Phone { get; set; }
+
+    public string? Qq { get; set; }
+
+    public string? Wechat { get; set; }
+
+    public string? CreatedByUsername { get; set; }
+
+    public string? UpdatedByUsername { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public DateTime UpdatedOn { get; set; }
+
+    public LTree Path { get; set; }
+
+    public Guid? SnapshotEventId { get; set; }
+
+    public Guid? WalletId { get; set; }
+
+    public bool NegativeAgentDividendCarryForward { get; set; }
+
+    public virtual ICollection<AgentAuditLog> AgentAuditLogs { get; set; } = new List<AgentAuditLog>();
+
+    public virtual ICollection<AgentBank> AgentBanks { get; set; } = new List<AgentBank>();
+
+    public virtual ICollection<AgentDividendCondition> AgentDividendConditions { get; set; } = new List<AgentDividendCondition>();
+
+    public virtual ICollection<AgentDomain> AgentDomains { get; set; } = new List<AgentDomain>();
+
+    public virtual ICollection<AgentLoginRecord> AgentLoginRecords { get; set; } = new List<AgentLoginRecord>();
+
+    public virtual ICollection<AgentWallet> AgentWallets { get; set; } = new List<AgentWallet>();
+
+    public virtual Brand Brand { get; set; } = null!;
+
+    public virtual ICollection<Agent> InverseParentAgent { get; set; } = new List<Agent>();
+
+    public virtual Agent? ParentAgent { get; set; }
+
+    public virtual PlayerAgentRelation? PlayerAgentRelation { get; set; }
+
+    public virtual ICollection<Player> Players { get; set; } = new List<Player>();
+}

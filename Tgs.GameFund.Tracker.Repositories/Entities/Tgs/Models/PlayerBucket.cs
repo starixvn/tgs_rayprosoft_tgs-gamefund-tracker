@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class PlayerBucket
+{
+    public Guid Id { get; set; }
+
+    public string PlayerCode { get; set; } = null!;
+
+    public decimal BucketAmount { get; set; }
+
+    public short BucketType { get; set; }
+
+    public bool IsFull { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public decimal CurrentBucketAmount { get; set; }
+
+    public Guid? SnapshotId { get; set; }
+}

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.Core", "Tgs.GameFund.Tracker.Core\Tgs.GameFund.Tracker.Core.csproj", "{C65D80B9-1BC1-46F1-9E11-D507F284B74F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.Repositories", "Tgs.GameFund.Tracker.Repositories\Tgs.GameFund.Tracker.Repositories.csproj", "{AE3C1DBC-2196-4D85-924E-0804416D1945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.Core.UnitTest", "Tgs.GameFund.Tracker.Core.UnitTest\Tgs.GameFund.Tracker.Core.UnitTest.csproj", "{39EA24ED-EFCE-494B-853C-541237C31187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker", "Tgs.GameFund.Tracker\Tgs.GameFund.Tracker.csproj", "{0B482A4D-E704-461B-9BFE-8309BE5EA859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.Repositories.UnitTest", "Tgs.GameFund.Tracker.Repositories.UnitTest\Tgs.GameFund.Tracker.Repositories.UnitTest.csproj", "{BAB42176-1287-4520-A828-10A0683E6BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.UnitTest", "Tgs.GameFund.Tracker.UnitTest\Tgs.GameFund.Tracker.UnitTest.csproj", "{E9958499-C456-4ABF-AFE5-31D7845E313F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C65D80B9-1BC1-46F1-9E11-D507F284B74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65D80B9-1BC1-46F1-9E11-D507F284B74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65D80B9-1BC1-46F1-9E11-D507F284B74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65D80B9-1BC1-46F1-9E11-D507F284B74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3C1DBC-2196-4D85-924E-0804416D1945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3C1DBC-2196-4D85-924E-0804416D1945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3C1DBC-2196-4D85-924E-0804416D1945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3C1DBC-2196-4D85-924E-0804416D1945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EA24ED-EFCE-494B-853C-541237C31187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EA24ED-EFCE-494B-853C-541237C31187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EA24ED-EFCE-494B-853C-541237C31187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EA24ED-EFCE-494B-853C-541237C31187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B482A4D-E704-461B-9BFE-8309BE5EA859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B482A4D-E704-461B-9BFE-8309BE5EA859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B482A4D-E704-461B-9BFE-8309BE5EA859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B482A4D-E704-461B-9BFE-8309BE5EA859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB42176-1287-4520-A828-10A0683E6BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB42176-1287-4520-A828-10A0683E6BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB42176-1287-4520-A828-10A0683E6BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB42176-1287-4520-A828-10A0683E6BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

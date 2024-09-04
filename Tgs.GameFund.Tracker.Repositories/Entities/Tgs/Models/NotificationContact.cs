@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class NotificationContact
+{
+    /// <summary>
+    /// 總公司識別碼
+    /// </summary>
+    public Guid ResellerId { get; set; }
+
+    /// <summary>
+    /// 公司識別碼
+    /// </summary>
+    public Guid LicenseeId { get; set; }
+
+    /// <summary>
+    /// 平台識別碼
+    /// </summary>
+    public Guid BrandId { get; set; }
+
+    /// <summary>
+    /// 通知類型(信箱、Skype、Telegram)
+    /// </summary>
+    public int Type { get; set; }
+
+    /// <summary>
+    /// 聯絡方式
+    /// </summary>
+    public string Contacts { get; set; } = null!;
+
+    /// <summary>
+    /// 創建時間
+    /// </summary>
+    public DateTime CreatedOn { get; set; }
+
+    /// <summary>
+    /// 修改時間
+    /// </summary>
+    public DateTime UpdatedOn { get; set; }
+}

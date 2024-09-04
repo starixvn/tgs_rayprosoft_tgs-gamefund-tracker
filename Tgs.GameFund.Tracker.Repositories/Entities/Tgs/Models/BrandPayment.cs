@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class BrandPayment
+{
+    public Guid Id { get; set; }
+
+    public Guid BrandId { get; set; }
+
+    public int DisplayOrder { get; set; }
+
+    public Guid PaymentMethodChannelId { get; set; }
+
+    public int TransferType { get; set; }
+
+    public string ChannelName { get; set; } = null!;
+
+    public int PaymentStatus { get; set; }
+
+    public decimal TransferLimitFrom { get; set; }
+
+    public decimal TransferLimitTo { get; set; }
+
+    public int PlayerListCondition { get; set; }
+
+    public bool AllPlayers { get; set; }
+
+    public bool IdentityAuthentication { get; set; }
+
+    public bool PhoneAuthentication { get; set; }
+
+    public bool DepositedAmountUnlimited { get; set; }
+
+    public decimal DepositedAmountMin { get; set; }
+
+    public decimal DepositedAmountMax { get; set; }
+
+    public string? Reason { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public DateTime UpdatedOn { get; set; }
+
+    public string CreatedByUsername { get; set; } = null!;
+
+    public string UpdatedByUsername { get; set; } = null!;
+
+    public string ExtendedData { get; set; } = null!;
+
+    public decimal HandlingFeeRateTenPercentile { get; set; }
+
+    public bool ReducePlayerAmount { get; set; }
+
+    public virtual Brand Brand { get; set; } = null!;
+
+    public virtual ICollection<BrandPaymentPlayer> BrandPaymentPlayers { get; set; } = new List<BrandPaymentPlayer>();
+
+    public virtual ICollection<DepositForm> DepositForms { get; set; } = new List<DepositForm>();
+
+    public virtual PaymentMethodChannel PaymentMethodChannel { get; set; } = null!;
+
+    public virtual ICollection<WithdrawForm> WithdrawForms { get; set; } = new List<WithdrawForm>();
+
+    public virtual ICollection<VipLevel> VipLevels { get; set; } = new List<VipLevel>();
+}

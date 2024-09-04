@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Tgs.GameFund.Tracker.Repositories.Entities;
+
+public partial class BrandLanguage
+{
+    public Guid BrandId { get; set; }
+
+    public string CultureCode { get; set; } = null!;
+
+    public string BrandCultureCode { get; set; } = null!;
+
+    public virtual Brand Brand { get; set; } = null!;
+
+    public virtual Language CultureCodeNavigation { get; set; } = null!;
+}
