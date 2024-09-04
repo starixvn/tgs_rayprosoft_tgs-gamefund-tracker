@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker", "Tgs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.Repositories.UnitTest", "Tgs.GameFund.Tracker.Repositories.UnitTest\Tgs.GameFund.Tracker.Repositories.UnitTest.csproj", "{BAB42176-1287-4520-A828-10A0683E6BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.UnitTest", "Tgs.GameFund.Tracker.UnitTest\Tgs.GameFund.Tracker.UnitTest.csproj", "{E9958499-C456-4ABF-AFE5-31D7845E313F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameFund.Tracker.IntegrationTest", "Tgs.GameFund.Tracker.IntegrationTest\Tgs.GameFund.Tracker.IntegrationTest.csproj", "{B310A4DD-DADD-4B24-91CC-EC9B8B51D4AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{BAB42176-1287-4520-A828-10A0683E6BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAB42176-1287-4520-A828-10A0683E6BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAB42176-1287-4520-A828-10A0683E6BA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9958499-C456-4ABF-AFE5-31D7845E313F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B310A4DD-DADD-4B24-91CC-EC9B8B51D4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B310A4DD-DADD-4B24-91CC-EC9B8B51D4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B310A4DD-DADD-4B24-91CC-EC9B8B51D4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B310A4DD-DADD-4B24-91CC-EC9B8B51D4AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

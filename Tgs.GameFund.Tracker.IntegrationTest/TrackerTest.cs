@@ -8,9 +8,9 @@ using NSubstitute;
 using Tgs.GameFund.Tracker.Core;
 using Valhalla.MessageQueue;
 
-namespace Tgs.GameFund.Tracker.UnitTest;
+namespace Tgs.GameFund.Tracker.IntegrationTest;
 
-public class IntegrationTest
+public class TrackerTest
 {
 	[Fact]
 	public async Task RequestTraceTest()
@@ -22,6 +22,7 @@ public class IntegrationTest
 			.WithWebHostBuilder(builder => builder.ConfigureServices(collection =>
 			{
 				collection.Replace(ServiceDescriptor.Transient(_ => fakeMessageSender));
+				collection.AddFakeNatsMessageQueue();
 			}))
 			.CreateClient();
 
