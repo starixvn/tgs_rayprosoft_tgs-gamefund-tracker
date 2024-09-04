@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
-using Tgs.GameFund.Tracker.Core;
-using Tgs.GameFund.Tracker.Repositories.Entities;
+using Tgs.GameFund.Tracker.Entities;
 
 namespace Tgs.GameFund.Tracker.Repositories.UnitTest;
 
@@ -14,12 +13,12 @@ public class GameFundRepositoryUnitTest
 		var gameProviderId = Guid.NewGuid();
 		var walletId = Guid.NewGuid();
 		var playerCode = "4ucmqplxb029";
-		var options = new DbContextOptionsBuilder<TgsDbContext>()
+		var options = new DbContextOptionsBuilder<TgsContext>()
 			.UseInMemoryDatabase(Guid.NewGuid().ToString())
 			.Options;
 
 		var fakeLogger = NullLogger<GameFundRepository>.Instance;
-		var fakeContext = new TgsDbContext(options);
+		var fakeContext = new TgsContext(options);
 		var sut = new GameFundRepository(fakeLogger, fakeContext);
 
 		// Act
@@ -44,11 +43,11 @@ public class GameFundRepositoryUnitTest
 		var walletId = Guid.NewGuid();
 		var playerCode = "4ucmqplxb029";
 		var systemTime = DateTime.UtcNow;
-		var options = new DbContextOptionsBuilder<TgsDbContext>()
+		var options = new DbContextOptionsBuilder<TgsContext>()
 			.UseInMemoryDatabase(Guid.NewGuid().ToString())
 			.Options;
 
-		using (var prepareContext = new TgsDbContext(options))
+		using (var prepareContext = new TgsContext(options))
 		{
 			await prepareContext.GameFundTransferTraces
 				.AddAsync(new()
@@ -66,7 +65,7 @@ public class GameFundRepositoryUnitTest
 		}
 
 		var fakeLogger = NullLogger<GameFundRepository>.Instance;
-		var fakeContext = new TgsDbContext(options);
+		var fakeContext = new TgsContext(options);
 		var sut = new GameFundRepository(fakeLogger, fakeContext);
 
 		// Act

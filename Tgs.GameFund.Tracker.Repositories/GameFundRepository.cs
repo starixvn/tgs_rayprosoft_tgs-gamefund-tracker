@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Tgs.GameFund.Tracker.Core;
-using Tgs.GameFund.Tracker.Repositories.Entities;
+using Tgs.GameFund.Tracker.Entities;
 
 namespace Tgs.GameFund.Tracker.Repositories;
 
 internal class GameFundRepository(
 	ILogger<GameFundRepository> logger,
-	TgsDbContext tgsDbContext
+	TgsContext TgsContext
 	) : IGameFundRepository
 {
 	public async ValueTask SaveAsync(Guid gameProviderId, Guid walletId, string playerCode, CancellationToken cancellationToken = default)
@@ -16,7 +16,7 @@ internal class GameFundRepository(
 
 		var systemTime = DateTime.UtcNow;
 
-		var entity = await tgsDbContext.GameFundTransferTraces
+		var entity = await TgsContext.GameFundTransferTraces
 			.FirstOrDefaultAsync(
 				e =>
 					e.GameProviderId == gameProviderId &&
@@ -35,7 +35,7 @@ internal class GameFundRepository(
 				CreatedOn = systemTime,
 				UpdatedOn = systemTime
 			};
-			await tgsDbContext.GameFundTransferTraces
+			await TgsContext.GameFundTransferTraces
 				.AddAsync(entity, cancellationToken)
 				.ConfigureAwait(false);
 		}
@@ -44,7 +44,7 @@ internal class GameFundRepository(
 			entity.UpdatedOn = systemTime;
 		}
 
-		await tgsDbContext
+		await TgsContext
 			.SaveChangesAsync(cancellationToken)
 			.ConfigureAwait(false);
 	}

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tgs.GameFund.Tracker.Core;
 using Tgs.GameFund.Tracker.Repositories;
-using Tgs.GameFund.Tracker.Repositories.Entities;
+using Tgs.GameFund.Tracker.Entities;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +11,6 @@ public static class ServiceCollectionExtensions
 		this IServiceCollection services,
 		Action<IServiceProvider, DbContextOptionsBuilder> efConfigure)
 		=> services
-		.AddDbContext<TgsDbContext>(efConfigure)
+		.AddDbContext<TgsContext>(efConfigure)
 		.AddTransient<IGameFundRepository, GameFundRepository>();
 }
