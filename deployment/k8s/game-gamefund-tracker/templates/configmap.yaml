@@ -13,6 +13,9 @@ data:
           "Tgs.GameFund.Tracker.Messages.TraceMessageHandler": "Information",
           "Tgs.GameFund.Tracker.Core.ApplicationServices.HandleTrackCommandService": "Information"
         }
+      },
+      "GameFundTracker": {
+        "GameFundClientBaseUrl": "http://game-gamefund/"
       }
     }
   otel-collector-config.yaml: |

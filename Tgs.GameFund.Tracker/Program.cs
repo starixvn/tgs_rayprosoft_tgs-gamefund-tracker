@@ -1,7 +1,6 @@
 using System.Net.Mime;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NATS.Client.Core;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -44,12 +43,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
 	.AddGameFundTrackerCore()
-	.AddGameFundTrackerRepository(
-		efConfigure: (sp, dbBuilder) =>
-		{
-			var config = sp.GetRequiredService<IConfiguration>();
-			_ = dbBuilder.UseNpgsql(config.GetConnectionString("Tgs"));
-		});
+	.AddGameFundTrackerRepository()
+	.AddGameFundClient(builder => builder.ConfigureHttpClient((sp, client) =>
+	{
+		var configuration = sp.GetRequiredService<IConfiguration>();
+		client.BaseAddress = configuration.GetValue<Uri>("GameFundTracker:GameFundClientBaseUrl")!;
+	}));
 
 builder.Services
 	.AddKeyedSingleton("Nats", (sp, _) => new NatsConnection(NatsOpts.Default with
